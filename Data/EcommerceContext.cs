@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
+using System.Threading.Tasks;
 
 namespace eCommerce.Data
 {
@@ -31,12 +32,18 @@ namespace eCommerce.Data
             builder.Entity<IdentityUserLogin<string>>(entity => { entity.ToTable("user_logins"); });
             builder.Entity<IdentityUserToken<string>>(entity => { entity.ToTable("user_tokens"); });
             builder.Entity<IdentityRoleClaim<string>>(entity => { entity.ToTable("role_claims"); });
+
+
         }  
 
-        public override int SaveChanges()
+        public DbSet<Products> Products { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrdersDetails> OrdersDetails { get; set; }
+
+        public async Task<int> SaveChangesAsync()
         {
             CheckForAuditables();
-            return base.SaveChanges();
+            return await base.SaveChangesAsync();
         }
 
         public void CheckForAuditables()

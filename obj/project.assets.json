@@ -5943,7 +5943,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "AutoMapper >= 10.0.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.9",
       "Microsoft.EntityFrameworkCore.tools >= 3.1.9"
@@ -5994,7 +5994,7 @@
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[3.1.9, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

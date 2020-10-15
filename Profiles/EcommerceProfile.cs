@@ -1,4 +1,5 @@
 using AutoMapper;
+using eCommerce.Dtos;
 using eCommerce.Models;
 
 namespace eCommerce.Profiles
@@ -7,6 +8,8 @@ namespace eCommerce.Profiles
     {
         public EcommerceProfile()
         {
+            CreateMap<Products, ProductsDto>();
+            CreateMap<ProductsDto, Products>();
         }
     }
 }

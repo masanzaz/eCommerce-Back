@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using eCommerce.Data;
 using eCommerce.Profiles;
+using eCommerce.Services;
 
 namespace eCommerce
 {
@@ -39,7 +40,7 @@ namespace eCommerce
                     (Configuration.GetConnectionString("EcommerceContext")));
             services.AddControllers();
             services.AddSingleton(mapper);
-
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
